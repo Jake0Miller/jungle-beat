@@ -37,4 +37,37 @@ class LinkedList
     end
     str.chop
   end
+
+  def prepend(data)
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      new_head(data)
+    end
+  end
+
+  def new_head(data)
+    temp_node = Node.new(data)
+    temp_node.next = @head
+    @head = temp_node
+  end
+
+  def insert(position, data)
+    if position == 0
+      new_head(data)
+    else
+      insert_node(position, Node.new(data))
+    end
+  end
+
+  def insert_node(position, node)
+    cur_node = @head
+    until position == 1
+      return cur_node.next = node if cur_node.next.nil?
+      cur_node = cur_node.next
+      position -= 1
+    end
+    node.next = cur_node.next
+    cur_node.next = node
+  end
 end

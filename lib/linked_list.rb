@@ -32,9 +32,9 @@ class LinkedList
     return str if @head.nil?
     cur_node = @head
     until cur_node.nil?
-      str << cur_node.data
+      str << cur_node.data + ' '
       cur_node = cur_node.next
     end
-    str
+    str.chop
   end
 end

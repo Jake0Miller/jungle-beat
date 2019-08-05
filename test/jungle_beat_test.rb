@@ -29,4 +29,14 @@ class JungleBeatTest < MiniTest::Test
 
     assert_equal 6, @jungle.count
   end
+
+  def test_play
+    @jungle.append('deep doo ditt woo hoo shu')
+    expected = "say -r 500 -v Boing 'deep doo ditt woo hoo shu'"
+
+    assert_equal 6, @jungle.count
+    assert_equal 6, @jungle.list.count
+    assert_equal expected, @jungle.generate_play
+    @jungle.play
+  end
 end

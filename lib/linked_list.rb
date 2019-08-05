@@ -37,4 +37,12 @@ class LinkedList
     end
     str.chop
   end
+
+  def prepend(data)
+
+  end
+
+  def insert(position,data)
+
+  end
 end

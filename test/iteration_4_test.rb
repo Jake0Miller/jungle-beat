@@ -18,6 +18,7 @@ class LinkedListTest < MiniTest::Test
     assert_equal 'deep woo shi shu blop', @list.to_string
     assert_equal 'shi', @list.find(2, 1)
     assert_equal 'woo shi shu', @list.find(1, 3)
+    assert_equal 'shi shu blop', @list.find(2, 10)
   end
 
   def test_pop

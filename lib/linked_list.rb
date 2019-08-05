@@ -70,4 +70,22 @@ class LinkedList
     node.next = cur_node.next
     cur_node.next = node
   end
+
+  def find(position, num)
+
+  end
+
+  def pop
+
+  end
+
+  def includes?(data)
+    return false if @head.nil?
+    cur_node = @head
+    until cur_node.nil?
+      return true if cur_node.data == data
+      cur_node = cur_node.next
+    end
+    false
+  end
 end

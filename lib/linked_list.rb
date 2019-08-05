@@ -84,6 +84,7 @@ class LinkedList
   def find_string(node, num)
     ans = node.data
     until num == 1
+      return ans if node.next.nil?
       node = node.next
       ans += ' ' + node.data
       num -= 1

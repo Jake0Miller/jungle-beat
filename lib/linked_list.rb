@@ -39,7 +39,13 @@ class LinkedList
   end
 
   def prepend(data)
-
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      temp_node = Node.new(data)
+      temp_node.next = @head
+      @head = temp_node
+    end
   end
 
   def insert(position,data)

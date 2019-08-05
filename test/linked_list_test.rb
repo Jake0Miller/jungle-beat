@@ -24,11 +24,20 @@ class LinkedListTest < MiniTest::Test
     assert_equal 'doop', @list.head.data
     assert_nil @list.head.next
     assert_equal 1, @list.count
+
+    @list.append('deep')
+
+    assert_equal 'deep', @list.head.next.data
+    assert_equal 2, @list.count
   end
 
   def test_to_string
     @list.append('doop')
 
     assert_equal 'doop', @list.to_string
+
+    @list.append('deep')
+
+    assert_equal 'doop deep', @list.to_string
   end
 end

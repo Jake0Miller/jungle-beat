@@ -8,4 +8,8 @@ class JungleBeat
   def append(string)
     string.split.each { |str| @list.append(str) }
   end
+
+  def count
+    @list.count
+  end
 end

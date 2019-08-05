@@ -17,6 +17,6 @@ class NodeTest < MiniTest::Test
   end
 
   def test_next_node_defaults_to_nil
-    assert_nil @node.next_node
+    assert_nil @node.next
   end
 end

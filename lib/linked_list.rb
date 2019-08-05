@@ -72,11 +72,45 @@ class LinkedList
   end
 
   def find(position, num)
+    reutrn nil if @head.nil?
+    cur_node = @head
+    until position == 0
+      cur_node = cur_node.next
+      position -= 1
+    end
+    find_string(cur_node, num)
+  end
 
+  def find_string(node, num)
+    ans = node.data
+    until num == 1
+      node = node.next
+      ans += ' ' + node.data
+      num -= 1
+    end
+    ans
   end
 
   def pop
+    return nil if @head.nil?
+    return pop_head_node if @head.next.nil?
+    cur_node = @head
+    until cur_node.next.next.nil?
+      cur_node = cur_node.next
+    end
+    remove_and_return_node(cur_node)
+  end
 
+  def pop_head_node
+    ans = @head.data
+    @head = nil
+    ans
+  end
+
+  def remove_and_return_node(node)
+    ans = node.next.data
+    node.next = nil
+    ans
   end
 
   def includes?(data)

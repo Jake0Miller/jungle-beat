@@ -24,6 +24,10 @@ class LinkedListTest < MiniTest::Test
     assert_equal 'blop', @list.pop
     assert_equal 'shu', @list.pop
     assert_equal 'deep woo shi', @list.to_string
+    assert_equal 'shi', @list.pop
+    assert_equal 'woo', @list.pop
+    assert_equal 'deep', @list.pop
+    assert_nil @list.pop
   end
 
   def test_includes?

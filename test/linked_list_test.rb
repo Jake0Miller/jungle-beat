@@ -60,5 +60,9 @@ class LinkedListTest < MiniTest::Test
     assert_equal 'dop woo plop suu', @list.to_string
     assert_equal 4, @list.count
     assert_equal 'dop', @list.head.data
+
+    @list.insert(10, 'pow')
+
+    assert_equal 'dop woo plop suu pow', @list.to_string
   end
 end

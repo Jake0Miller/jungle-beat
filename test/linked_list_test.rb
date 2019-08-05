@@ -27,6 +27,7 @@ class LinkedListTest < MiniTest::Test
 
     @list.append('deep')
 
+    assert_equal @list.head.next.data, 'deep'
     assert_equal 'deep', @list.head.next.data
     assert_equal 2, @list.count
   end

@@ -52,6 +52,13 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_insert
+    @list.append('plop')
+    @list.append('suu')
+    @list.prepend('dop')
+    @list.insert(1, 'woo')
 
+    assert_equal 'dop woo plop suu', @list.to_string
+    assert_equal 4, @list.count
+    assert_equal 'dop', @list.head.data
   end
 end
